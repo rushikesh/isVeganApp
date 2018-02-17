@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
-                                                                                
+                                                                                    
     xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.rushis.isVegan"
         version   = "1.0.0">
@@ -54,6 +54,9 @@
     <gap:plugin name="cordova-plugin-camera" source="npm" />
     <gap:plugin name="cordova-plugin-tesseract-ocr" source="npm" />
     <!-- Third party plugins -->
+    <feature name="Capture">
+        <param name="android-package" value="org.apache.cordova.Capture" />
+    </feature>
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
     <!--
         <gap:plugin name="com.phonegap.plugins.barcodescanner" />
