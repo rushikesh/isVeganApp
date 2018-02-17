@@ -15,23 +15,26 @@
 			text-align: center;
 		}
 	</style>
-	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 	<!-- <script type="text/javascript" charset="utf-8" src="js/isVegan.js"></script> -->
 	<script type="text/javascript">
 		document.addEventListener("deviceready", onDeviceReady, false);
 
 		function onDeviceReady() {
-			console.log(navigator.camera);
+			alert(navigator.camera);
 		}
 
 		function captureImage() {
-			var cameraOptions = {};
+			alert("I am in");
+			var cameraOptions = {
+				sourceType: Camera.PictureSourceType.CAMERA
+			};
 			navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);
 		}
 
 		function cameraSuccess(imageData) {
-			var image = document.getElementById('myImage');
 			var imagePath = "data:image/jpeg;base64," + imageData;
+			alert(imagePath);
 			Tesseract.recognise(imagePath, successCallback, errorCallback);
 
 			function successCallback(result) {
